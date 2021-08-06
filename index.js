@@ -17,6 +17,10 @@ app.use(bodyParser.urlencoded({extended: false}))
 // static files
 app.use(express.static(`${__dirname}/public`))
 
+app.get('/', (req, res) => {
+    res.render('index')
+})
+
 const port = process.env.PORT || 5000
 
 app.listen(port, () => {
