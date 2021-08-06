@@ -6,8 +6,13 @@ const exphbs = require('express-handlebars')
 
 const app = express()
 
-// handlebars and config
+// handlebars middlewar
 app.engine('handlebars', exphbs({defaultLayout: 'main'}))
+app.set('view engine', 'handlebars')
+
+// body parser
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
 
 const port = process.env.PORT || 5000
 
