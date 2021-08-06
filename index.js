@@ -6,6 +6,9 @@ const exphbs = require('express-handlebars')
 
 const app = express()
 
+// handlebars and config
+app.engine('handlebars', exphbs({defaultLayout: 'main'}))
+
 const port = process.env.PORT || 5000
 
 app.listen(port, () => {
