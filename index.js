@@ -30,8 +30,14 @@ app.post('/charge', (req, res) => {
         source: stripeToken
     })
     .then(customer => {
-        stripe.charges.
+        stripe.charges.create({
+            amount,
+            description: 'Purchase a EBook',
+            currency: 'usd',
+            customer: customer.id
+        })
     })
+    .then(charge => res.render('success'))
 
 })
 
