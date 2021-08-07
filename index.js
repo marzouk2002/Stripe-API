@@ -21,6 +21,10 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
+app.post('/charge', (req, res)=>{
+
+})
+
 const port = process.env.PORT || 5000
 
 app.listen(port, () => {
