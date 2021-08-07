@@ -21,7 +21,17 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.post('/charge', (req, res)=>{
+app.post('/charge', (req, res) => {
+    const { stripeEmail, stripeToken } = req.body
+    const amount = 2500
+
+    stripe.customers.create({
+        email: stripeEmail,
+        source: stripeToken
+    })
+    .then(customer => {
+        stripe.charges.
+    })
 
 })
 
