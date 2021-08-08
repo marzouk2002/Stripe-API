@@ -18,7 +18,9 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.static(`${__dirname}/public`))
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('index', {
+        stripePublicKey: process.env.STR_PB
+    })
 })
 
 app.post('/charge', (req, res) => {
