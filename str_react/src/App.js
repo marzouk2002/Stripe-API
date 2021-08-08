@@ -8,7 +8,10 @@ function App() {
         name="Web Development Ebook"
         description="Ebook written by Marzouk Youssouf"
         locale="auto"
-      />
+        
+      ><button className="btn btn-primary">
+      pay now
+    </button></StripeCheckout>
   );
 }
 
